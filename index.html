@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.min.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/brands.css" integrity="sha384-whKHCkwP9f4MyD1vda26+XRyEg2zkyZezur14Kxc784RxUU1E7HvWVYj9EoJnUV7" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.2.8/jquery.mb.YTPlayer.min.js" integrity="sha256-Of4U/w4YOovAa5xpbHCvFKX8vy/Ve2ajQZ8N+mvqmA4=" crossorigin="anonymous"></script>
+	<title>CNajm</title>
+</head>
+
+<body>
+	<div id="bg_img" class="player" data-property="{videoURL:'http://youtu.be/okGPcoToS3Y',containment:'body', showControls:false, autoPlay:true, mute:true, startAt:0, opacity:0.05}"></div>
+	<div class="container">
+		<ul id="menu">
+			<li><a href="javascript:show('main')">about</a></li>
+			<li><a href="javascript:show('work')">work</a></li>
+			<li><a href="javascript:show('skills')">skills</a></li>
+			<li><a href="javascript:show('contact')">say hi</a></li>
+		</ul>
+		<div id="main" class="content" style="display:block;">
+			<div class="row">
+
+				<div class="column column-20"> <img src="mybloodyvalentine-loveless.jpg" id="main_photo"> </div>
+
+				<div class="column column-70 column-offset-10">
+					<h1>Hi, I'm char</h1>
+					<p>I'm a developer living in Vancouver, Canada.
+						<br/> In my free time I like to play games and think about thinking.</p>
+					<p>I'm always up for new projects or ideas, hmu.</p>
+				</div>
+			</div>
+		</div>
+		<div id="work" class="content">
+			<h1>Things I've made</h1>
+			<p>You can click on each project for details.</p>
+			<ul>
+				<li><a href="#" onclick="preview(this);event.preventDefault()">Renée <i class="fab fa-python"></i> <i class="fab fa-html5"></i> <i class="fab fa-youtube"></i> <i class="fab fa-twitch"></i></a>
+					<div class="details" style="display:none;align:center;">
+						<h2>Renée</h2>
+						<p>I created Renée with a friend out of an idea we both saw potential in. Renée is an autonomous content curation backend designed to identify and upload high quality video clips to a YouTube channel. The clips go through a series of deterministic analysis algorithms and are ranked by a scoring function. I also built a web-based control panel to facilitate usage and diagnostics. <br /><br /> Renée is closed source for commercial reasons, contact me if you're interested in accessing source code.</p>
+					</div>
+				</li>
+				<li><a href="#" onclick="preview(this);event.preventDefault()">Sych <i class="fab fa-python"></i> <i class="fab fa-whatsapp"></i></a>
+					<div class="details" style="display:none;align:center;">
+						<h2>Sych<a href="https://github.com/CNajm/Sych-WhatsApp" target="_blank" style="padding-left:0.5em;"><i class="fab fa-github"></i></a></h2>
+						<p>I reverse engineered the WhatsApp Web interface and used my findings to make a small library with a focus on chatbot development. Sych is open-sourced on github.</p>
+					</div>
+				</li>
+				<li><a href="#" onclick="preview(this);event.preventDefault()">Chatbots <i class="fab fa-python"></i> <i class="fab fa-node-js"></i></a>
+					<div class="details" style="display:none;align:center;">
+						<h2>Chatbots</h2>
+						<p>I've created a multitude of chatbots for Discord, Slack, Telegram, WhatsApp, and Steam for personal/friends' use. I have also completed 2 extensive bot projects for a client as contracted paid work.</p>
+					</div>
+				</li>
+				<li><a href="#" onclick="preview(this);event.preventDefault()">Applying Computer Vision in Video Games <i class="fab fa-python"></i></a>
+					<div class="details" style="display:none;align:center;">
+						<h2>Applying Computer Vision in Video Games</h2>
+						<p>I fused my interests in gaming and programming by applying computer vision techniques to some of the video games I play.</p>
+						<br />
+						<h3>Albion Online</h3>
+						<p>I used the scikit-image toolkit to post-process automated screengrabs of the Albion Online auction house and pass them into a trained TesseractOCR engine to extract price and meta data.</p>
+						<br />
+						<h3>Rust</h3>
+						<p>Rust is a game with a grid-based inventory system. I extracted the item icons from the game files and used template matching to scan container inventories and build an index of stored items. I then used this as a baseline to develop functionality such as automating inventory sorting and removing of junk items. I served the collected data through a simple REST api in order to access it through a chatbot.</p>
+						<a href="rust-vision-preview.png" target="_blank">
+						<h4>Visualization of how it works</h4>
+						</a>
+					</div>
+				</li>
+				<li>Small-Scale Robotics - Arduino & Raspberry Pi Prototyping <i class="fab fa-raspberry-pi"></i> </li>
+			</ul>
+			<div id="box" style="margin-top:5rem;margin-bottom:5rem;display:none"></div>
+		</div>
+		<div id="skills" class="content">
+			<h1>Things I work with</h1>
+			<p>I use tabs, not spaces.</p>
+			<div class="row">
+				<div class="column">
+					<h5>Languages</h5>
+					<ul>
+						<li>Python</li>
+						<li>Node.js</li>
+						<li>C#</li>
+
+					</ul>
+				</div>
+				<div class="column">
+					<h5>Frameworks & Libs</h5>
+					<ul>
+						<li>Selenium</li>
+						<li>Flask</li>
+						<li>jQuery</li>
+						<li>Bootstrap</li>
+					</ul>
+				</div>
+				<div class="column">
+					<h5>Additional</h5>
+					<ul>
+						<li>Git</li>
+						<li>Docker</li>
+						<li>Photoshop, Sketch, Figma</li>
+						<li>UNIX server administration</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="contact" class="content">
+			<h1>Contact information</h1>
+			<!-- <p>I accept cookie bribes.</p> -->
+			<ul>
+				<li>Email - <a href="mailto:charbel262@gmail.com" target="_blank">charbel262@gmail.com</a></li>
+				<li>Github - <a href="https://github.com/CNajm" target="_blank">CNajm</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script>
+	jQuery(function() {
+	jQuery(".player").YTPlayer()
+	});
+
+	function show(obj) {
+		if ($('div#box').is(':visible'))
+			{$("div#box").fadeOut(500)}
+		$(".content")["fadeOut"](150);
+		$("#" + obj)["delay"](200)["fadeIn"](500)
+	}
+
+	function preview(obj) {
+		console.log( $(obj).next().html() )
+		$("div#box").fadeOut(500, function() {
+			$(this).html($(obj).next().html()).fadeIn(500)
+		})
+
+	}
+</script>
+
+</html>
